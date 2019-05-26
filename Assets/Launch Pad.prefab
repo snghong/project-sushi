@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4463376824892124086}
   - component: {fileID: 5285684114866468986}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Launch Pad
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
