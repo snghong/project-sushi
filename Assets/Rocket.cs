@@ -10,6 +10,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip death;
+    [SerializeField] float levelLoadDelay = 2f; 
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem successParticles;
@@ -68,7 +69,7 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(death);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", 1f);
+        Invoke("LoadFirstLevel", levelLoadDelay);
     }
 
     private void StartSuccessSequence()
@@ -77,12 +78,12 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(success);
         successParticles.Play();
-        Invoke("LoadNextLevel", 1f); //parametise time
+        Invoke("LoadNextLevel", levelLoadDelay); //parametise time
     }
 
     private void LoadFirstLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); // remove magic number here
     }
 
     private void LoadNextLevel()
@@ -112,7 +113,7 @@ public class Rocket : MonoBehaviour
 
     private void RespondToThrustInput()
     {
-        float thrustThisFrame = mainThrust;
+        float thrustThisFrame = mainThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.Space))
         {
             ApplyThrust(thrustThisFrame);
