@@ -80,15 +80,40 @@ public class Rocket : MonoBehaviour
         successParticles.Play();
         Invoke("LoadNextLevel", levelLoadDelay); //parametise time
     }
+   
 
     private void LoadFirstLevel()
     {
-        SceneManager.LoadScene(0); // remove magic number here
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        int finalSceneIndex = SceneManager.sceneCountInBuildSettings;
+        if (currentSceneIndex <= 4)
+            SceneManager.LoadScene(0);
+        else if (currentSceneIndex == 5)
+            SceneManager.LoadScene(5);
+        else if (currentSceneIndex == 6)
+            SceneManager.LoadScene(5);
+        else if (currentSceneIndex == 7)
+            SceneManager.LoadScene(5);
+        else if (currentSceneIndex == 8)
+            SceneManager.LoadScene(5);
+        else if (currentSceneIndex == 9)
+            SceneManager.LoadScene(5);
+        else 
+            SceneManager.LoadScene(10);
+
     }
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        int finalSceneIndex = SceneManager.sceneCountInBuildSettings;
+
+        if (currentSceneIndex == finalSceneIndex) 
+            SceneManager.LoadScene(0);
+        else
+            SceneManager.LoadScene(nextSceneIndex);
         //todo change from definite number to an expression so we can have more scenes
     }
 

@@ -240,13 +240,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rcsThrust: 250
-  mainThrust: 4000
+  mainThrust: 2000
   mainEngine: {fileID: 8300000, guid: d3f1784fdf5df01479547680ac524081, type: 3}
   success: {fileID: 8300000, guid: 4fd022fd25c50d44a9a810daf5fe5754, type: 3}
   death: {fileID: 8300000, guid: 9086c6490d75539429990084930b9164, type: 3}
+  levelLoadDelay: 2
   mainEngineParticles: {fileID: 9216887263102579496}
   successParticles: {fileID: 2859384378582326631}
-  deathParticles: {fileID: 3504356973649747488}
+  deathParticles: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+    type: 3}
 --- !u!54 &7942031624561809927
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1603,12 +1605,6 @@ PrefabInstance:
 --- !u!4 &3633863274995146746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4436899185823514, guid: ab79a37535b979f48b6de56e3a0a5cb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3630411693500944608}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3504356973649747488 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
     type: 3}
   m_PrefabInstance: {fileID: 3630411693500944608}
   m_PrefabAsset: {fileID: 0}
